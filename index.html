@@ -34,7 +34,7 @@
           <li class="collection-header">
             <h4>TODO LIST</h4>
           </li>
-          <item v-for="item in items" :item="item"></item>
+          <item v-for="item in items" :item="item" @remove="removeItem"></item>
         </ul>
       </div>
     </div>
@@ -47,7 +47,7 @@
       <li class="collection-item">
         <div>
           {{ item }}
-          <a v-on:click.stop="remove" class="secondary-content">
+          <a @click="remove" class="secondary-content">
             <i class="material-icons">delete</i>
           </a>
         </div>
